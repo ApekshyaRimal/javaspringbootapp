@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+<div class="container">
+
+    <div class="starter-template">
+        <h1>
+            <tr th:each="user : ${myUser}">
+                <h4>User ID:</h4>
+                <div><td th:text="${user.userId}"></td></div>
+                <h4>First Name:</h4>
+                <div><td th:text="${user.firstName}">First Name</td></div>
+                <h4>Last Name:</h4>
+                <div><td th:text="${user.lastName}">Last Name</td></div>
+                <h4>Email Address</h4>
+                <div><td th:text="${user.emailAddress}">Email Address</td></div>
+                <h4>Phone Number</h4>
+                <div> <td th:text="${user.phoneNumber}">Phone Number</td></div>
+
+            </tr>
+        </h1>
+    </div>
+
+</div>
+
+</body>
+</html>
