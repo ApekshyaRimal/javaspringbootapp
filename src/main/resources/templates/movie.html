@@ -13,33 +13,22 @@
 </head>
 <body>
 
-<nav class="navbar navbar-inverse">
-    <div class="container">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">Spring Boot</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
 <div class="container">
 
     <div class="starter-template">
+
         <h1>
             <tr th:each="movie : ${myMovie}">
+                <img th:src="${movie.posterLink}"/>
                 <h4>Movie ID</h4>
-                <td th:text="${movie.movieId}">Movie Id</td>
+                <td th:text="${movie.movieId}"></td>
                 <h4>Movie Name:</h4>
-                <td th:text="${movie.movieName}">Movie Name</td>
+                <td th:text="${movie.movieName}"></td>
                 <h4>Genre of the movie:</h4>
-                <td th:text="${movie.genre}">Genre</td>
+                <td th:text="${movie.genre}"></td>
                 <h4>Release Date</h4>
-                <td th:text="${movie.releaseDate}">Release date</td>
+                <td th:text="${movie.releaseDate}"></td>
+
             </tr>
         </h1>
     </div>

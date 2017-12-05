@@ -11,28 +11,34 @@
           href="../../css/main.css" />
 
 </head>
+
 <body>
 
-<div class="container">
+<h1><p>WELCOME TO THE MOVIE STORE</p></h1>
+<h3><p>This is server in London</p></h3>
 
+<h1>
+    <img th:src="@{http://d3lx1s6cgldmnw.cloudfront.net/Coming+soon.jpg}"/>
+
+
+</h1>
+<div class="container">
     <div class="starter-template">
         <table style="width:500px" border="1">
             <tr>
                 <td th:text="Id"></td>
                 <td th:text="Name"></td>
-                <td th:text="Genre"></td>
-                <td th:text="ReleaseDate"></td>
             </tr>
             <tr th:each="movie : ${movies}">
+
                 <td th:text="${movie.movieId}"></td>
-                <td th:text="${movie.movieName}"></td>
-                <td th:text="${movie.genre}"></td>
-                <td th:text="${movie.releaseDate}"></td>
+                <td><a th:href="@{'/getByMovieId?movieId=' + ${movie.movieId}}" th:text="${movie.movieName}"></a></td>
             </tr>
         </table>
     </div>
-
 </div>
-
+<h1>
+    <a th:href="@{http://www.thymeleaf/documentation.html}"/>
+</h1>
 </body>
 </html>

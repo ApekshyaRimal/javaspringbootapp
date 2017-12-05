@@ -7,13 +7,15 @@ buildscript {
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath "io.spring.gradle:dependency-management-plugin:1.0.3.RELEASE"
 	}
+
 }
 
 apply plugin: 'java'
 apply plugin: 'eclipse-wtp'
 apply plugin: 'org.springframework.boot'
-apply plugin: 'war'
+apply plugin: "io.spring.dependency-management"
 
 group = 'edu.nku'
 version = '0.0.1-SNAPSHOT'
@@ -26,6 +28,12 @@ repositories {
 configurations {
 	providedRuntime
 }
+dependencyManagement {
+	imports {
+		mavenBom 'software.amazon.awssdk:bom:2.0.0-preview-1'
+	}
+}
+
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
@@ -33,4 +41,7 @@ dependencies {
 	compile 'org.springframework.boot:spring-boot-starter-data-jpa'
 	compile 'mysql:mysql-connector-java:5.1.31'
 	compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	compile 'software.amazon.awssdk:s3'
+	testCompile group: 'junit', name: 'junit', version: '4.11'
 }
+apply plugin: "io.spring.dependency-management"

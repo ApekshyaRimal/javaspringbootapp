@@ -23,15 +23,19 @@ public class Movie {
     @Column(name = "release_date")
     private Date releaseDate;
 
+    @Column(name = "image_link")
+    private String posterLink;
+
     public Movie() {
 
     }
 
-    public Movie(int movieId, String movieName, String genre, Date releaseDate) {
+    public Movie(int movieId, String movieName, String genre, Date releaseDate, String posterLink) {
         this.movieId = movieId;
         this.movieName = movieName;
         this.genre = genre;
         this.releaseDate = releaseDate;
+        this.posterLink=posterLink;
     }
 
     public int getMovieId() {
@@ -64,5 +68,13 @@ public class Movie {
 
     public void setReleaseDate(Date releaseDate) {
         this.releaseDate = releaseDate;
+    }
+
+    public String getPosterLink() {
+        return posterLink;
+    }
+
+    public void setPosterLink(String posterLink) {
+        this.posterLink = posterLink;
     }
 }
